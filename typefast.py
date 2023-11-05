@@ -18,7 +18,7 @@ SPEED_213 = 0.045
 SPEED_769 = 0.009
 SPEED_INF = 0
 
-DELAY = SPEED_769
+DELAY = SPEED_INF
 
 ocr_string = ""
 
@@ -81,8 +81,9 @@ while dont_stop_typing:
     print("")
     print(ocr_string)
 
-    if should_i_type:
+    # if should_i_type:
 
-        for i in ocr_string:
-            time.sleep(DELAY)
-            keyboard_output.type(i)
+    for i in ocr_string:
+        if not should_i_type: break
+        time.sleep(DELAY)
+        keyboard_output.type(i)
